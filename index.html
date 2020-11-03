@@ -12,6 +12,7 @@
 </body>
 <script>
     let localStream;
+    let peer = null;
     // カメラ映像取得
     navigator.mediaDevices.getUserMedia({video: true, audio: true})
       .then( stream => {
