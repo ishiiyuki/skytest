@@ -8,7 +8,7 @@
 </head>
 <body>
     <video id="my-video" width="400px" autoplay muted playsinline></video>
-    <p id="my-id"></p>
+    <p>Your id: <span id="my-id">...</span></p>
 </body>
 <script>
     let localStream;
@@ -37,9 +37,6 @@
       $('#my-id').text(peer.id);
     });
 
-    peer.on('error', function(err){
-      alert(err.message);
-    });
 
   </script>
 </html>
