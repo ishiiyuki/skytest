@@ -33,8 +33,13 @@
     });
   
     //PeerID取得
-    peer.on('open', () => {
-        document.getElementById('my-id').textContent = peer.id;
+    peer.on('open', function(){
+      $('#my-id').text(peer.id);
     });
+
+    peer.on('error', function(err){
+      alert(err.message);
+    });
+
   </script>
 </html>
