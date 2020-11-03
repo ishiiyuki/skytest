@@ -12,16 +12,6 @@
 </body>
 <script>
     let localStream;
-
-    const peer = new Peer({
-      key: '84bae65a-1ac1-4be9-86ec-0d0b6415ba41',
-      debug: 3
-    });
-  
-    //PeerID取得
-    peer.on('open', () => {
-        document.getElementById('my-id').textContent = peer.id;
-    });
     // カメラ映像取得
     navigator.mediaDevices.getUserMedia({video: true, audio: true})
       .then( stream => {
@@ -35,6 +25,16 @@
       // 失敗時にはエラーログを出力
       console.error('mediaDevice.getUserMedia() error:', error);
       return;
+    });
+
+    const peer = new Peer({
+      key: '84bae65a-1ac1-4be9-86ec-0d0b6415ba41',
+      debug: 3
+    });
+  
+    //PeerID取得
+    peer.on('open', () => {
+        document.getElementById('my-id').textContent = peer.id;
     });
   </script>
 </html>
